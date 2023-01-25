@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./index.css">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="cards">
+      <div class="front-card" id="front">
+        <img class="logo-card" src="./images/card-logo.svg" alt="">
+        <img class="card-img" src="./images/bg-card-front.png" alt="">
+        <div class="infos-card-front">
+          <p class="card-number-display" id="num-card">0000 0000 0000 0000</p>
+          <p class="card-name-display" id="name-card">Jane Appleseed</p>
+          <p class="card-exp-date-display"><span id="exp-month">00</span>/<span id="exp-year">00</span>
+          </p>
+        </div>
+      </div>
+      <div class="back-card" id="back">
+        <img class="card-img" src="./images/bg-card-back.png" alt="">
+        <div class="infos-card-back">
+          <p class="card-cvc-display" id="cvc-card">000</p>
+        </div>
+      </div>
+    </div>
+    <form class="">
+      <fieldset class="name-field">
+        <label for="name">Cardholder Name</label>
+        <input type="text" placeholder="e.g. Jane Appleseed" name="name" id="name-input" required
+          pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$">
+        <p class="error-msg inv"></p>
+      </fieldset>
+
+      <fieldset class="number-field">
+        <label for="card-number">Card Number</label>
+        <input id="number-input" type="text" placeholder="e.g. 1234 5678 9123 0000" name="card-number" minlength="16"
+          maxlength="16" required pattern="[0-9]+$">
+        <p class="error-msg"></p>
+      </fieldset>
+
+      <fieldset class="exp-field">
+        <label for="exp-date">Exp. Date (MM/YY)</label>
+        <input id="exp-month-input" type="text" name="exp-date" placeholder="MM" required minlength="2" maxlength="2"
+          pattern="[0-9]+$">
+        <input id="exp-year-input" type="text" name="exp-date" placeholder="YY" required minlength="2" maxlength="2"
+          pattern="[0-9]+$">
+        <p class="error-msg"></p>
+      </fieldset>
+
+      <fieldset class="cvc-field">
+        <label for="cvc">CVC</label>
+        <input id="cvc-input" type="text" name="cvc" placeholder="e.g. 123" required minlength="3" maxlength="3"
+          pattern="[0-9]+$">
+        <p class="error-msg"></p>
+      </fieldset>
+
+      <button type="submit">Confirm</button>
+    </form>
+    <div class="success-div inv">
+      <img src="./images/icon-complete.svg" alt="">
+
+      <h2>Thank you!</h2>
+      <p>We've added your card details</p>
+      <button>Continue</button>
+    </div>
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </main>
+  <script src="./script.js"></script>
+</body>
+
+</html>
